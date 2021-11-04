@@ -1,0 +1,59 @@
+<form [formGroup]="clientForm" class="text-center border border-light p-5">
+  <p class="h4 mb-4">{{ actionTag }} cliente</p>
+
+  <!-- Name -->
+  <input
+    type="text"
+    id="Name"
+    class="form-control mb-4"
+    placeholder="Nombre del cliente"
+    formControlName="clientName"
+  />
+
+  <!-- Email -->
+  <input
+    type="Email"
+    id="Email"
+    class="form-control mb-4"
+    placeholder="E-mail del cliente"
+    formControlName="clientEmail"
+  />
+
+  <!-- Phone -->
+  <input
+    type="Phone"
+    id="Phone"
+    class="form-control mb-4"
+    placeholder="Telefono del cliente"
+    formControlName="phoneClient"
+  />
+
+  <!-- Ruc -->
+  <input
+    type="Ruc"
+    id="Ruc"
+    class="form-control mb-4"
+    placeholder="Ruc de cliente"
+    formControlName="rucClient"
+  />
+
+  <!--ClientType-->
+  <select class="form-control mb-4" formControlName="clientType">
+    <option [value]="item.id" *ngFor="let item of clientType">
+      {{ item.clientTypeName }}
+    </option>
+  </select>
+
+  <!-- Sign in button -->
+  <button
+    mdbBtn
+    color="info"
+    block="true"
+    type="submit"
+    (click)="sendData()"
+    class="btn btn-success"
+  >
+    {{ buttonName }}
+  </button>
+</form>
+<!-- Default form subscription -->
